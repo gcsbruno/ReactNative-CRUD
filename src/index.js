@@ -60,6 +60,13 @@ export default function App() {
 
       {this.state.loggedInUser ?
         <Button onPress={this.getProjectList} title="Carregar" /> : <Button onPress={this.signIn} title="Entrar" />}
+
+      {this.state.projetcts.map(project => (
+        <View key={project.id} style={{ marginTop: 15 }}>
+          <Text style={{ fontWeight }}> {project.title}</Text>
+          <Text>{project.description}</Text>
+        </View>
+      ))}
       <StatusBar style="auto" />
     </View>
   );
